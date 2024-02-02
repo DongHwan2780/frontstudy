@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #p1{
+      /* 글꼴 */ font-family: 'Gill Sans', 'Gill Sans MT', sans-serif;
+      /* 크기 */ font-size: 32px;
+      /* 굵기 */ font-weight: 900;
+      /* 속성 */ font-style: italic;
+      /* 색상 */ color: #ff00ff;
+                 color:rgb(255, 255, 0);
+                 color:rgba(0, 255, 255, 0.6);
+    }
+    #p2{
+      /* 자간 */  letter-spacing : -0.5px;
+      /* 행 높이 */ line-height : 32px;
+      /* 밑줄 */ text-decoration :underline;
+      /* 들여쓰기 */ text-indent :20px;
+    }
+    #p3{
+      /* 정렬 */ text-align: center;  /* 블록 요소만 정렬된다 */
+      /* 벤더 프리픽스(vendor prefix) 
+        1.브라우저마다 prefix 값을 다르게 지정할 수 있다.
+        2. 종류
+          1) -webkit- : 크롬, 사파리
+          2) -moz-    : 파이어폭스
+          3) -o-      : 오페라
+      */
+      -webkit-text-stroke-color: red;
+      -webkit-text-stroke-width: 1px;
+      font-size: 32px;
+    }
+  </style>
+  <!-- 
+    구글 폰트 사용하기
+    1. https://fonts.google.com/에 접속
+    2. 원하는 폰트 선택하기
+    3. 해당 폰트를 사용할 수 있도록 처리한다.
+      1) <link>
+      2) @import
+    4. CSS 속성을 준다.
+   -->
+   
+   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;900&display=swap');
+    #p4{
+      font-family: 'Noto Serif KR', sans-serif;
+      font-size: 32px;
+    }
+    textarea {
+    resize: none;
+    }
+  </style>
+
+</head>
+<body>
+  <p id="p1">안녕하세요</p>
+  <p id="p2">감사해요</p>
+  <p id="p3">잘있어요</p>
+  <p id="p4">다시 만나요</p>
+
+  <textarea name="" id="" cols="150" rows="15" ></textarea>
+
+</body>
+</html>
