@@ -4,24 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    .topbanner > form > .notice{
+      margin-left: 1200px;
+      margin-top: 150px;
+    }
+    .topbanner > form > .list{
+      margin-left: 200px;
+      margin-top: 150px;
+    }
+  </style>
 </head>
 <body>
+  
+
+
   <h1 style="background-color: beige; font-size: 300%; font-family: D2coding;">
     <div style="text-align: center; color: black;" >
       동환 홈페이지
     </div>
   </h1>
 
-  <form action="">
-    <fieldset style="font-size: 200%; font-family: D2Coding; text-align: left; border-style: dashed; border-color: black; width:max-content;">
-      <legend><strong>&lt;공지 사항&gt;</strong></legend>
-      <span style="text-align: left; font-family: D2Coding;">
-        <p>오타꾸 길드는 기본적으로 매너있는, 자유로운 분위기의 친목 길드를 지향합니다<br>
-          다같이 즐겁게 길드 생활을 하기 위한 간단한 규칙 지켜주시면 감사드립니다.</p>
-        </span>
-    </fieldset>
+  <span class="topbanner">
+    <form action="">
+      <fieldset class="list" style="font-size: 200%; font-family: D2Coding; text-align: left; border-style: dashed; border-color: black; width:max-content;">
+        <legend><strong>&lt;게시판&gt;</strong></legend>
+        <span style="text-align: left; font-family: D2Coding;">
+          <p>여기에는 게시판을<br>
+            넣을 공간입니다.</p>
+          </span>
+      </fieldset>
 
-  </form>
+      <fieldset class="notice" style="font-size: 200%; font-family: D2Coding; text-align: left; border-style: dashed; border-color: black; width:max-content;">
+        <legend><strong>&lt;공지 사항&gt;</strong></legend>
+        <span style="text-align: left; font-family: D2Coding;">
+          <p>여기에는 뭔가 내용을<br>
+            넣을 공간입니다.</p>
+          </span>
+      </fieldset>
+    </form>
+  </span>
+
 
 
 </body>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    .table1{
+      border: 1px solid gray;
+      border-collapse: collapse;
+    }
+    .table1 td{
+      border-bottom: 1px solid blue;
+    }
+    
+    .table1 td:first-of-type{
+      width: 100px;
+    }
+    .table1 td:nth-of-type(2){
+      width: 200px;
+    }
+    .table1 td:last-of-type{
+      width: 300px;
+    }
+
+    .table1 > thead td{
+      padding: 10px;
+    }
+
+    .table1 > tbody td{
+      height: 50px;
+      vertical-align: top;
+    }
+
+    .table1 > tbody > tr:hover{
+      background-color: bisque;
+      cursor: pointer;
+    }
+
+  </style>
+
+  <table class="table1">
+    <thead>
+      <tr>
+        <td>회원번호</td>
+        <td>회원명</td>
+        <td>포인트</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>월</td>
+        <td>100</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>화</td>
+        <td>200</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>수</td>
+        <td>300</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="2">포인트합계</td>
+        <td>600</td>
+      </tr>
+    </tfoot>
+  </table>
+  <hr>
+
+  <style>
+    .title{
+      text-align: center;
+      font-weight: bold;
+    }
+    .title > .month{
+      font-size: 300%;
+      color: blue;
+    }
+    .table2{
+      border: 1px solid black;
+      border-collapse: collapse;
+      font-weight: bold;
+      margin: 10px auto;
+    }
+
+    .table2 td{
+      width: 100px;
+      height: 10px;
+      border: 1px solid gray;
+      vertical-align: top;
+      padding: 10px;
+    }
+
+    .table2 .date td:hover{
+      background-color: aqua;
+    }
+
+    .table2 .top{
+      font-weight: bold;
+      text-align: center;
+      width: 10px;
+    }
+    .table2 .top .sunday{
+      color: red;
+    }
+    .table2 .date .sunday{
+      color: red;
+      height: 100px;
+    }
+
+    .table2 .top .saturday{
+      color: blue;
+      
+    }
+    .table2 .date .saturday{
+      color: blue;
+      height: 100px;
+    }
+
+    .table2 .top .notfeb{
+      color: gray;
+      
+    }
+    .table2 .date .notfeb{
+      color: gray;
+    }
+
+  </style>
+
+  <div class="title">
+    2024 <span class="month">2</span> Februry
+  </div>
+  <table class="table2">
+    <tr class="top">
+      <td class="sunday">SUN</td>
+      <td>MON</td>
+      <td>TUE</td>
+      <td>WED</td>
+      <td>THU</td>
+      <td>FRI</td>
+      <td class="saturday">SAT</td>
+    </tr>
+    <tr class="date">
+      <td class="notfeb">28</td>
+      <td class="notfeb">29</td>
+      <td class="notfeb">30</td>
+      <td class="notfeb">31</td>
+      <td>1</td>
+      <td>2</td>
+      <td class="saturday">3</td>
+    </tr>
+    <tr class="date">
+      <td class="sunday">4</td>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td class="sunday">9</td>
+      <td class="sunday">10</td>
+    </tr>
+    <tr class="date">
+      <td class="sunday">11</td>
+      <td class="sunday">12</td>
+      <td>13</td>
+      <td>14</td>
+      <td>15</td>
+      <td>16</td>
+      <td class="saturday">17</td>
+    </tr>
+    <tr class="date">
+      <td class="sunday">18</td>
+      <td>19</td>
+      <td>20</td>
+      <td>21</td>
+      <td>22</td>
+      <td>23</td>
+      <td class="saturday">24</td>
+    </tr>
+    <tr class="date">
+      <td class="sunday">25</td>
+      <td>26</td>
+      <td>27</td>
+      <td>28</td>
+      <td>29</td>
+      <td class="notfeb">1</td>
+      <td class="notfeb">2</td>
+    </tr>
+  </table>
+
+</body>
+</html>
