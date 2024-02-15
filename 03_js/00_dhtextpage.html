@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+
+</style>
+<body>
+  
+  
+  <div onclick="touch()" id="bg">
+    <img src="../../assets/image/animal1.jpg" width="1000px" height="800px">
+  </div>
+
+  <script>
+    var imgnum = 0;
+    function timer(time)
+    {
+      var timerId = setInterval(function()
+      {
+        
+        if(time == 0)
+        {
+          clearInterval(timerId);
+          return;
+        }
+
+        if(imgnum == 10)
+          imgnum = 0;
+        
+        imgnum += 1;
+        imgtag = '../../assets/image/animal' + imgnum + '.jpg';
+        document.querySelector('#bg > img').setAttribute('src', imgtag);
+        console.log(imgtag);
+        time--;
+      }, 2000);
+    }
+
+    //timer(20);
+
+    function touch()
+    {
+      if(imgnum == 10)
+          imgnum = 0;
+
+      imgnum += 1;
+      imgtag = '../../assets/image/animal' + imgnum + '.jpg';
+      document.querySelector('#bg > img').setAttribute('src', imgtag);     
+      console.log(imgtag);
+    }
+
+
+  </script>
+  
+</body>
+</html>
