@@ -12,7 +12,7 @@
   
   
   <div onclick="touch()" id="bg">
-    <img src="../../assets/image/animal1.jpg" width="1000px" height="800px">
+    <img src="../../assets/image/animal1.jpg" width="450px" height="300px">
   </div>
 
   <script>
@@ -21,7 +21,6 @@
     {
       var timerId = setInterval(function()
       {
-        
         if(time == 0)
         {
           clearInterval(timerId);
@@ -39,7 +38,7 @@
       }, 2000);
     }
 
-    //timer(20);
+    //timer(100);
 
     function touch()
     {
@@ -51,9 +50,221 @@
       document.querySelector('#bg > img').setAttribute('src', imgtag);     
       console.log(imgtag);
     }
-
-
   </script>
-  
+
+  <hr>
+
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    li{
+      list-style-type: none;
+    }
+
+    #slideShow{
+      width: 450px;
+      height: 300px;
+      position: relative;
+      margin: 50px auto;
+      overflow: hidden;   
+    }
+
+    .slides{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 450px; /* 슬라이드할 사진과 마진 총 넓이 */
+      transition: left 0.5s ease-out; 
+      /*ease-out: 처음에는 느렸다가 점점 빨라짐*/
+    }
+
+    /* 슬라이드들 옆으로 정렬 */
+    .slides li:not(:last-child){
+      float: left;
+    }
+
+    .slides li{
+      float: left;
+    }
+
+    .controller span{
+      position:absolute;
+      background-color: transparent;
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      top: 50%;
+      font-size: 1.3em;
+      cursor: pointer;
+    }
+
+    /* 이전, 다음 화살표에 마우스 커서가 올라가 있을때 */
+    .controller span:hover{
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .prev{
+      left: 10px;
+      font-weight: bold;
+    }
+    .next{
+      right: 10px;
+      font-weight: bold;
+    }
+
+    #slideShow > .slides > li > img{
+      width: 450px;
+      height: 300px;
+    }
+  </style>
+
+  <div id="slideShow">
+    <ul class="slides">
+      <li><img src="../../assets/image/animal1.jpg" alt=""></li>
+      <li><img src="../../assets/image/animal2.jpg" alt=""></li>
+      <li><img src="../../assets/image/animal3.jpg" alt=""></li>
+      <li><img src="../../assets/image/animal4.jpg" alt=""></li>
+      <li><img src="../../assets/image/animal5.jpg" alt=""></li>
+      <li><img src="../../assets/image/animal6.jpg" alt=""></li>
+      <li><img src="../../assets/image/animal7.jpg" alt=""></li>
+      <li><img src="../../assets/image/animal8.jpg" alt=""></li>
+      <li><img src="../../assets/image/animal9.jpg" alt=""></li>
+      <li><img src="../../assets/image/animal10.jpg" alt=""></li>
+    </ul>  
+    <p class="controller">
+      <span class="prev">&lang;</span>  
+      <span class="next">&rang;</span>
+    </p>
+  </div>
+
+  <script>
+    const slides = document.querySelector('.slides'); //전체 슬라이드 컨테이너
+    const slideImg = document.querySelectorAll('.slides li'); //모든 슬라이드들
+    let currentIdx = 0; //현재 슬라이드 index
+    const slideCount = slideImg.length; // 슬라이드 개수
+    const prev = document.querySelector('.prev'); //이전 버튼
+    const next = document.querySelector('.next'); //다음 버튼
+    const slideWidth = 450; //한개의 슬라이드 넓이
+
+    slides.style.width = slideWidth * slideCount + 'px';
+
+    function moveSlide(num) {
+      slides.style.left = -num * slideWidth + 'px';
+      currentIdx = num;
+    }
+
+    prev.addEventListener('click', function () {
+
+      if (currentIdx !== 0) moveSlide(currentIdx - 1);
+    }); 
+
+    next.addEventListener('click', function () {
+      if (currentIdx !== slideCount - 1) {
+        moveSlide(currentIdx + 1);
+      }
+    });
+  </script>
+
+  <hr>
+  <style>
+    .slides2{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 450px; /* 슬라이드할 사진과 마진 총 넓이 */
+      transition: left 0.5s ease-out; 
+      /*ease-out: 처음에는 느렸다가 점점 빨라짐*/
+    }
+
+    /* 슬라이드들 옆으로 정렬 */
+    .slides2 li:not(:last-child){
+      float: left;
+    }
+
+    .slides2 li{
+      float: left;
+    }
+
+    #slideShow > .slides2 > li > img{
+      width: 450px;
+      height: 300px;
+    }
+  </style>
+  <div id="slideShow">
+    <ul class="slides2">
+      <li><img src="../../assets/image/animal1.jpg" alt=""></li>
+      <li><img src="../../assets/image/animal2.jpg" alt=""></li>
+      <li><img src="../../assets/image/animal3.jpg" alt=""></li>
+      <li><img src="../../assets/image/animal4.jpg" alt=""></li>
+      <li><img src="../../assets/image/animal5.jpg" alt=""></li>
+      <li><img src="../../assets/image/animal6.jpg" alt=""></li>
+      <li><img src="../../assets/image/animal7.jpg" alt=""></li>
+      <li><img src="../../assets/image/animal8.jpg" alt=""></li>
+      <li><img src="../../assets/image/animal9.jpg" alt=""></li>
+      <li><img src="../../assets/image/animal10.jpg" alt=""></li>
+    </ul>  
+  </div>
+
+  <script>
+    const slides2 = document.querySelector('.slides2'); //전체 슬라이드 컨테이너
+    const slideImg2 = document.querySelectorAll('.slides2 li'); //모든 슬라이드들
+    let currentIdx2 = 0; //현재 슬라이드 index
+    const slideCount2 = slideImg2.length; // 슬라이드 개수
+    const slideWidth2 = 450; //한개의 슬라이드 넓이
+
+    slides2.style.width = slideWidth2 * slideCount2 + 'px';
+
+    function moveSlide2(num) {
+      slides2.style.left = -num * slideWidth2 + 'px';
+      currentIdx2 = num;
+    }    
+
+    function timer(time)
+    {
+      var timerId = setInterval(function()
+      {
+        if(time == 0)
+        {
+          clearInterval(timerId);
+          return;
+        }
+
+        if(imgnum == 9)
+          imgnum = -1;
+        
+        imgnum += 1;
+        moveSlide2(imgnum);
+        time--;
+      }, 3000);
+    }
+
+    timer(100);
+  </script>
+
+
+  <script>
+    function makeClone() 
+    {
+      let cloneSlide_first = slideImg[0].cloneNode(true); // 맨 처음 이미지를 복제
+      let cloneSlide_last = slides2.lastElementChild.cloneNode(true);
+
+      //append() 컨텐츠를 선택된 요소 내부의 끝 부분에 삽입
+      slides2.append(cloneSlide_first);   // 슬라이드 내부의 맨 뒤에 cloneSlide_first(복제한 첫번째 이미지) 삽입 
+
+      //부모노드.insertBefore(삽입 할 노드, 기준 점 노드);
+      slides2.insertBefore(cloneSlide_last, slides2.firstElementChild); // 슬라이드 맨 앞에 cloneSlide_last(복제한 마지막 이미지) 삽입 
+    }
+    function initfunction() 
+    {
+      slides2.style.width = (slideWidth + slideMargin) * (slideCount + 2) + 'px';
+      slides2.style.left = -(slideWidth + slideMargin) + 'px';
+    }
+  </script>
+
+
 </body>
 </html>
