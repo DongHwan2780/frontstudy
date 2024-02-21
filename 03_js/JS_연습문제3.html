@@ -111,7 +111,7 @@
       width: 384px;
       height: 256px;
       margin: 10px auto;
-      background-image: url('../../assets/image/architecture2.jpg');
+      background-image: url('../../assets/image/architecture1.jpg');
       background-size: 100%;
     }
     #thumbnail-images {
@@ -132,11 +132,29 @@
   <script>
     /* 5개 thumbnail 이미지에 마우스를 가져다대면 해당 이미지를 original-image로 표시하시오. */
     var thum = document.querySelectorAll('#thumbnail-images > div');
-    console.log(thum.length);
-
     for(var i = 0; i < thum.length; i++)
     {
-      console.log(document.querySelectorAll('#thumbnail-images > div')[i].getAttribute('style'));
+      document.querySelectorAll('#thumbnail-images > div')[i].addEventListener('mouseover', function()
+      {
+        switch(this.getAttribute('style'))
+        {
+          case "background-image: url('../../assets/image/architecture1.jpg');":
+            document.getElementById('original-image').style.backgroundImage = 'url(../../assets/image/architecture1.jpg)';
+            break;
+          case "background-image: url('../../assets/image/architecture2.jpg');":
+            document.getElementById('original-image').style.backgroundImage = 'url(../../assets/image/architecture2.jpg)';
+            break;
+          case "background-image: url('../../assets/image/architecture3.jpg');":
+            document.getElementById('original-image').style.backgroundImage = 'url(../../assets/image/architecture3.jpg)';
+            break;
+          case "background-image: url('../../assets/image/architecture4.jpg');":
+            document.getElementById('original-image').style.backgroundImage = 'url(../../assets/image/architecture4.jpg)';
+            break;
+          case "background-image: url('../../assets/image/architecture5.jpg');":
+            document.getElementById('original-image').style.backgroundImage = 'url(../../assets/image/architecture5.jpg)';
+            break;
+        }
+      })
     }
     
   </script>
@@ -167,6 +185,21 @@
       해제하면 check1.png를 checkbox 대신 나타내시오.
       체크하면 check2.png를 checkbox 대신 나타내시오.
     */
+   input{
+      display: none;
+    }
+    input + label { 
+    cursor: pointer; 
+    padding-left: 23px; 
+    padding-bottom: 23px;
+    background-repeat: no-repeat;
+    background-image: url('../../assets/image/check1.png');
+    background-size: 20%;
+    }
+
+   input:checked + label{
+      background-image: url('../../assets/image/check2.png');
+    }
     
   </style>
   <script>
@@ -202,6 +235,11 @@
     <div><button type="button" id="btn5" data-state="close-answer">정답보기</button></div>
     <div id="answer">5</div>
   </div>
+  <style>
+    #answer {
+      display: none;
+    }
+  </style>
   <script>
     /*
       btn5를 클릭할때마다
@@ -209,7 +247,24 @@
       Hint) data-state="close-answer"는 정답 숨김 상태를 의미하고,
             data-state="open-answer"는 정답 보임 상태를 의미한다.
     */
+    document.getElementById('btn5').addEventListener('click', function()
+    {
+      var btn5 = document.getElementById('btn5');
+      if(btn5.dataset.state === 'close-answer')
+        btn5.dataset.state = 'open-answer';
+      else
+        btn5.dataset.state = 'close-answer';
 
+      switch(btn5.dataset.state)
+      {
+        case 'close-answer':
+          document.getElementById('answer').style.display = 'none';
+          break;
+        case 'open-answer':
+          document.getElementById('answer').style.display = 'block';
+          break;
+      }
+    })
   </script>
 
 </body>
